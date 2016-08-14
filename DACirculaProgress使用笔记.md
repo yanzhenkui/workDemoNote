@@ -53,7 +53,10 @@
 // 转动进度
 @property(nonatomic) CGFloat progress;
 
+// 无限转动一圈持续时常,一般是在初始化时设置才有效
 @property(nonatomic) CGFloat indeterminateDuration UI_APPEARANCE_SELECTOR;
+
+// 是否为无线转动
 @property(nonatomic) NSInteger indeterminate UI_APPEARANCE_SELECTOR; // Can not use BOOL with UI_APPEARANCE_SELECTOR :-(
 
 - (void)setProgress:(CGFloat)progress animated:(BOOL)animated;
@@ -71,4 +74,8 @@
 		
 		// UILabel placed right on the DACircularProgressView.
 	 	@property (strong, nonatomic) UILabel *progressLabel;
+	 	
+	 	
+###注意:
+* 设置微信图片加载等待图标无限滚动时,不能在创建控件同时设置indeterminate属性,最好是在一个事件中(例如点击事件)设置
   
